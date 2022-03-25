@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time : 2022/3/11 14:22
 # @Author : TuDaCheng
-# @File : FastText.py
+# @File : FastText2.py
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -10,9 +10,9 @@ import numpy as np
 
 class Config(object):
 
-    """配置参数"""
+    """改进的fastText配置参数"""
     def __init__(self, embedding):
-        self.model_name = "FastText"
+        self.model_name = "FastText2"
         self.train_path = "./datas/train.txt"
         self.dev_path = "./datas/dev.txt"
         self.test_path = "./datas/test.txt"

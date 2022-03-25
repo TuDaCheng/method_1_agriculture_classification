@@ -15,8 +15,8 @@ from train import train
 parser = argparse.ArgumentParser(description="Chinese Text Classification")  # 声明argparse对象 可附加说明
 
 # 添加模型参数 模型是必须设置的参数(required=True) 类型是字符串
-parser.add_argument("--model", type=str, default="TextRCNN", help="choose a model: choose a model: TextCNN, TextRNN,"
-                                                                 " FastText, TextRCNN, TextDPCNN, Transformer")
+parser.add_argument("--model", type=str, default="FastText1", help="choose a model: choose a model: TextCNN, TextRNN,"
+                                                                 " FastText2, TextRCNN, TextDPCNN, Transformer")
 # embedding随机初始化或使用预训练词或字向量 默认使用预训练
 parser.add_argument("--embedding", default="pre_trained", type=str, help="random or pre_trained")
 # 基于词还是基于字 默认基于字
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     embedding = "datas/embedding.npz"
     if args.embedding == 'random':
         embedding = 'random'
-    if model_name == "FastText":
+    if model_name == "FastText2":
         from utils_fasttext import build_dataset, build_iterator, get_time_dif
         embedding = "random"
     else:
